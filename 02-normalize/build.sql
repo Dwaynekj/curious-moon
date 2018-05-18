@@ -6,7 +6,8 @@ drop table if exists requests cascade;
 drop table if exists event_types cascade;
 
 drop table if exists master_plan;
-create table master_plan(
+create schema if not exists import;
+create table import.master_plan(
   start_time_utc text,
   duration text,
   date text,
@@ -18,7 +19,7 @@ create table master_plan(
   title text,
   description text
 );
-COPY import.master_plan FROM '/Users/rob/@Working/Enceladus/demos/02-normalize/../data/master_plan.csv' WITH DELIMITER ',' HEADER CSV;
+COPY import.master_plan FROM '/Users/Dwaynekj/Documents/Curious_Moon/data/master_plan.csv' WITH DELIMITER ',' HEADER CSV;
 -- TEAM
 drop table if exists teams;
 select distinct(team)
@@ -74,7 +75,7 @@ add id serial primary key;
 
 create table events(
   id serial primary key,
-  time_stamp timestamptz not null,
+  time_stamp timestamp not null,
   title varchar(500),
   description text,
   event_type_id int references event_types(id),

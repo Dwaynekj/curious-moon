@@ -1,7 +1,7 @@
 DB=enceladus
 BUILD=${CURDIR}/build.sql
 SCRIPTS=${CURDIR}/scripts
-CSV='${CURDIR}/../data/master_plan.csv'
+CSV='/Users/Dwaynekj/Documents/Curious_Moon/data/master_plan.csv'
 MASTER=$(SCRIPTS)/import.sql
 NORMALIZE = $(SCRIPTS)/normalize.sql 
 
