@@ -18,7 +18,7 @@ to_tsvector(
 from events
 inner join event_types 
 on event_types.id = events.event_type_id
-where target_id=40
+where target_id=28
 order by time_stamp;
 
 -- switching to materialized view
@@ -38,7 +38,7 @@ events.title)
 from events
 inner join event_types 
 on event_types.id = events.event_type_id
-where target_id=40
+where target_id=28
 order by time_stamp;
 
 -- indexing it 
